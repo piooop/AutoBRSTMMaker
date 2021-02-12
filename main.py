@@ -54,7 +54,7 @@ for i in file_dict:
    cn=cn+1
    os.system('.\\tmp\\ffmpeg\\bin\\ffmpeg.exe -i "' + str(i) + '" -acodec pcm_s16le -filter:a "volume=' + str(Decibels) + 'dB" -ac 1 ' + '".\\tmp\\c' + str(cn) + str(i.replace(audioft, '.wav')) + '"')
    os.system('.\\tmp\\ffmpeg\\bin\\ffmpeg.exe -i ".\\tmp\\c' + str(cn) + str(i.replace(audioft, '.wav')) + '" -acodec pcm_s16le -filter:a "atempo=1.35" ".\\tmp\\fastc' + str(cn) + str(i.replace(audioft, '.wav')) +'"')
- FastSamples=str(raw_input('How many samples does fastcx' + str(i.replace(audioft, '.wav') + " (located at the tmp folder) have?: ")
+ FastSamples=str(raw_input('How many samples does fastcx' + str(i.replace(audioft, '.wav') + " (located at the tmp folder) have?: ")))
  while acc>0:
   acc=acc-1
   cnc=cnc+1
