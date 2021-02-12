@@ -74,6 +74,8 @@ for i in file_dict:
  f.write('"' + str(direc)+ '\\tmp\\Multi BRSTM Builder with GUI Tool\\wdrev.exe" --build "' + str(direc) + "\\out\\" +  str(i.replace(audioft, '.brstm')) + '" ' + str(txt))
  f.write('' + '\n')
  f.write('"' + str(direc)+ '\\tmp\\Multi BRSTM Builder with GUI Tool\\wdrev.exe" --build "' + str(direc) + "\\out\\fast" +  str(i.replace(audioft, '.brstm')) + '" ' + str(txt.replace('c', 'fastc')))
+ f.write('' + '\n')
+ f.write('exit')
  f.close()
  os.system('start cmd /k ".\\tmp\\wdrev.bat"')
 print "Finished!. The files are in the out folder. You can delete the tmp folder and txt filex if you want to now."
