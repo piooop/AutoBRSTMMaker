@@ -54,6 +54,7 @@ for i in file_dict:
    cn=cn+1
    os.system('.\\tmp\\ffmpeg\\bin\\ffmpeg.exe -i "' + str(i) + '" -acodec pcm_s16le -filter:a "volume=' + str(Decibels) + 'dB" -ac 1 ' + '".\\tmp\\c' + str(cn) + str(i.replace(audioft, '.wav')) + '"')
    os.system('.\\tmp\\ffmpeg\\bin\\ffmpeg.exe -i ".\\tmp\\c' + str(cn) + str(i.replace(audioft, '.wav')) + '" -acodec pcm_s16le -filter:a "atempo=1.35" ".\\tmp\\fastc' + str(cn) + str(i.replace(audioft, '.wav')) +'"')
+ FastSamples=str(raw_input('How many samples does fastcx' + str(i.replace(audioft, '.wav') + " (located at the tmp folder) have?: ")
  while acc>0:
   acc=acc-1
   cnc=cnc+1
@@ -61,7 +62,7 @@ for i in file_dict:
   f= open('./tmp/DSPADPCM.bat', 'w+') 
   f.write('"' + str(direc)+ '\\tmp\\Multi BRSTM Builder with GUI Tool\\DSPADPCM.exe" -e ".\\tmp\\c' + str(ncc) + str(i.replace(audioft, '.wav')) + '" "tmp\\c' + str(ncc) + str(i.replace(audioft, '.dsp')) + '" -l0-' + str(Samples))
   f.write('' + '\n')
-  f.write('"' + str(direc)+ '\\tmp\\Multi BRSTM Builder with GUI Tool\\DSPADPCM.exe" -e ".\\tmp\\fastc' + str(ncc) + str(i.replace(audioft, '.wav')) + '" "tmp\\fastc' + str(ncc) + str(i.replace(audioft, '.dsp')) + '" -l0-' + str(Samples))
+  f.write('"' + str(direc)+ '\\tmp\\Multi BRSTM Builder with GUI Tool\\DSPADPCM.exe" -e ".\\tmp\\fastc' + str(ncc) + str(i.replace(audioft, '.wav')) + '" "tmp\\fastc' + str(ncc) + str(i.replace(audioft, '.dsp')) + '" -l0-' + str(FastSamples))
   f.close() 
   os.system('.\\tmp\\DSPADPCM.bat')
  while acc2>0:
